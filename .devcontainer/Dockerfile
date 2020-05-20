@@ -15,7 +15,8 @@ USER $USERNAME
 # Install gocode-gomod
 RUN export CHSH=no \
     && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" \
-    && sed -i 's/robbyrussell/agnoster/g' /home/vscode/.zshrc 
+    && sed -i 's/robbyrussell/agnoster/g' /home/vscode/.zshrc \
+    && sed -i 's/(git)/(git go golang)/g' /home/vscode/.zshrc
 
 # Update this to "on" or "off" as appropriate
 ENV GO111MODULE=auto

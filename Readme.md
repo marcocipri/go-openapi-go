@@ -1,0 +1,1 @@
+devoted to show the implementation of a rest service in go using the opeApi inictiative

@@ -2,7 +2,6 @@
 	"name": "Go and OpenApi Sample",
 	"dockerFile": "Dockerfile",
 	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [9000],
 	"workspaceFolder": "/go/",
@@ -19,10 +18,14 @@
 	"extensions": [
 		"ms-vscode.go"
 	],
-	
+	//"mounts": [
+	//	"source=${localWorkspaceFolder}/src,target=/go/src,type=bind,consistency=cached"
+	//],
 	// Uncomment the next line to run commands after the container is created.
 	// "postCreateCommand": "go version",
 
 	// Comment out the next line to run as root
-	"remoteUser": "vscode"
+	"remoteUser": "vscode",
+	"postCreateCommand": "go get github.com/marcocipri/go-openapi-go"
+
 }

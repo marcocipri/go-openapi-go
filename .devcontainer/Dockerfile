@@ -16,12 +16,12 @@ USER $USERNAME
 RUN export CHSH=no \
     && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" \
     && sed -i 's/robbyrussell/agnoster/g' /home/vscode/.zshrc \
+    && sed -i 's/(git)/(git go golang)/g' /home/vscode/.zshrc \
     && sudo sudo apt-get update \
     && sudo apt-get install -y default-jre \
     && mkdir -p /home/vscode/share/java \
-    && wget  https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/4.3.1/openapi-generator-cli-4.3.1.jar -O /home/vscode/share/java/openapi-generator-cli.jar \
-    && git clone https://github.com/go-task/task 
-    
+    && wget  https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/4.3.1/openapi-generator-cli-4.3.1.jar -O /home/vscode/share/java/openapi-generator-cli.jar
+
 # Update this to "on" or "off" as appropriate
 ENV GO111MODULE=on
 

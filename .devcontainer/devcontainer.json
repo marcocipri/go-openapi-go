@@ -16,11 +16,11 @@
 
 	// Add the IDs of extensions you want installed when the container is created in the array below.
 	"extensions": [
-		"ms-vscode.go"
+		"ms-vscode.go","42Crunch.vscode-openapi","Arjun.swagger-viewer"
 	],
 
 	// Comment out the next line to run as root
 	"remoteUser": "vscode",
-	"postCreateCommand": "go get github.com/marcocipri/go-openapi-go"
+	"postCreateCommand": "git clone https://github.com/marcocipri/go-openapi-go"
 
 }
